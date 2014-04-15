@@ -99,7 +99,8 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 		manager.onActivityResult(requestCode, resultCode, data);
 	}
 	
-	//AndroidL8Manager calls this method when you have lost all connections or when can not connect to any device           //after an init call.
+	//AndroidL8Manager calls this method when you have lost all connections or when can not connect to any device
+	//after an init call.
 	@Override
 	public void noDevicesConnected() {
 		Toast.makeText(this,"No Devices Connected", 0).show();
