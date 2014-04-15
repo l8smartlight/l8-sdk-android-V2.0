@@ -10,6 +10,9 @@ If you have done something with the previous version SDK V1.0, migrate your code
 **Note:** 
 Now a javadoc is available in /doc. In this documentation all functions and new features of V2.0 are shown to you.  
 
+**Note:**
+Thre is an easy way to create apps for your L8 without this SDk, you can use Exposed Api for more details:  
+
 ## 1. Installation:
 
 1.Clone the projects. 
@@ -168,7 +171,7 @@ Now when you want to set a led or put a new image in a L8 device, you can do all
  A detailed documentation about all functions can be consulted in javadoc section.
 
 **Note:**
-All operations through manager will affect to all connected devices, by default all are selected. You can operate with a specific L8 in this way:
+All operations through manager will affect to all connected devices, by default all are selected. You can operate with a specific L8 in this way: [Exposed API](https://github.com/l8devteam/Exposed-Android-API)
 
 **Example of use:**
 
