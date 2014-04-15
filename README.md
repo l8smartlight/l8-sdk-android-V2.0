@@ -39,7 +39,90 @@ You have to instantiate AndroidL8Manager and implement AndroidL8ManagerListener.
 **Example of use:**
 
 ```java
+public class MainActivity extends Activity implements AndroidL8ManagerListener{
 
+	private AndroidL8Manager manager = null;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		manager = new AndroidL8Manager(this); 
+		manager.registerListener(this); //You must register listener if you wanto to recive events for manager.
+						//N listeners can be registered.
+		manager.init(this);
+	}
+
+
+
+	@Override
+	public void bluetoothNotAvailable() {
+		Toast.makeText(this,"BT Not Available" , 0).show();
+	}
+
+	@Override
+	public void bluetoothNotEnabled() {
+		Toast.makeText(this,"BT not enabled" , 0).show();
+	}
+
+	@Override
+	public void noDevicesRegistered() {
+		manager.scan(this);
+	}
+
+	@Override
+	public void deviceConnected(L8 l8) {
+		try {
+			Toast.makeText(this,"Device connected "+l8.getConnectionURL() , 0).show();
+		} catch (L8Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void deviceDisconnected(L8 l8) {
+		try {
+			Toast.makeText(this,"Device disconnected" , 0).show();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		manager.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void noDevicesConnected() {
+		Toast.makeText(this,"No Devices Connected", 0).show();
+		manager.requestSimulator();
+	}
+
+	@Override
+	public void allConnectionsDone() {
+		Toast.makeText(this,"All connections done", 0).show();
+	}
+
+	@Override
+	public void simulatorRequested(L8 l8, boolean newSimulator) {
+		try
+		{
+		if(l8==null){
+			Toast.makeText(this,"Simulator null", 0).show();
+		}else if(newSimulator){
+			Toast.makeText(this,"New Simulator "+l8.getConnectionURL(), 0).show();
+		}else{
+			Toast.makeText(this,"Old Simulator "+l8.getConnectionURL(), 0).show();
+		}
+		}catch(Exception e){
+			Toast.makeText(this,"Error simulator", 0).show();
+		}
+	}
+	
 
 
 ```
