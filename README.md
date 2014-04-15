@@ -83,7 +83,7 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 		}
 	}
 	
-	//AndroidL8Manager calls this method when a device has been diconnected.
+	//AndroidL8Manager calls this method when a device has been disconnected.
 	@Override
 	public void deviceDisconnected(L8 l8) {
 		try {
@@ -93,7 +93,7 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 		}
 	}
 	
-	//As the first version it is requered if you want to use GUI helpers and automatic reponses.
+	//As the previous version it is requered if you want to use GUI helpers and automatic reponses.
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		manager.onActivityResult(requestCode, resultCode, data);
@@ -106,12 +106,14 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 		Toast.makeText(this,"No Devices Connected", 0).show();
 		manager.requestSimulator();
 	}
-
+	
+	//AndroidL8Manager calls this method when it has finished all initial connections and at least has one device connected 
 	@Override
 	public void allConnectionsDone() {
 		Toast.makeText(this,"All connections done", 0).show();
 	}
-
+	
+	//Optionally you can request a similator for test purpose. It is an asynchronous operation.
 	@Override
 	public void simulatorRequested(L8 l8, boolean newSimulator) {
 		try
@@ -129,5 +131,86 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 	}
 	
 
+	public void pressButton(View view){
+		try {
+			//set x y Led
+			manager.setLED(0, 0, Color.BLUE);
+			//set Super led
+			manager.setSuperLED(Color.RED);
+		} catch (L8Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 ```
+
+## 3. How it works
+
+Now when you want to set a led o put a new image in a L8 device, you can do all kind of operation through AndroidL8Manager.
+
+**Example of use:**
+
+```java
+   
+   public void pressButton(View view){
+		try {
+			//set x y Led
+			manager.setLED(0, 0, Color.BLUE);
+			//set Super led
+			manager.setSuperLED(Color.RED);
+		} catch (L8Exception e) {
+			e.printStackTrace();
+		}
+	}
+   
+```
+ A detail documentation about all functions can be consulted in javadoc section.
+
+**Note:**
+All operation through manager will affect to all connected devices, by default all are selected. You can operate with a specific L8 in this way:
+
+**Example of use:**
+
+```java
+   
+   public void pressButton(View view){
+		try {
+			//set x y Led
+			manager.getConnectedDeviceList().get(0).setLED(0, 0, Color.BLUE);
+			//set Super led
+		        manager.getConnectedDeviceList().get(0).setSuperLED(Color.RED);
+		} catch (L8Exception e) {
+			e.printStackTrace();
+		}
+	}
+   
+```
+
+Other way:
+
+Suppose you have two L8 connected
+
+**Example of use:**
+
+```java
+   
+   public void pressButton(View view){
+		try {
+			manager.getConnectedDeviceList().get(0).setSelected(false);
+			//set x y Led
+			manager.setLED(0, 0, Color.BLUE);
+			//set Super led
+			manager.setSuperLED(Color.RED);
+		} catch (L8Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+```
+This this case only the second L8 will change its leds.
+
+
+## 4. What is new in V2.0
+
+
