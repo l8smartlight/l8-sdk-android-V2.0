@@ -5,7 +5,10 @@ L8 smartlight Android SDK V2.0
 **News:** 
 We are proud to anounce the new l8 sdk version for Android platform, thanks you for your interest and patience. We are in continuous evolution thanks to all!.
 
-If you have done something with the previous version SDK V1.0, migrate your code to this new version is very easy to you. Installation and configuration steps are very similar.
+If you have done something with the previous version SDK V1.0, migrate your code to this new version is very easy to you. Installation and configuration steps are very similar. 
+
+**Note:** 
+Now a javadoc is available in /doc. In this documentation all functions and new features of V2.0 are shown to you.  
 
 ## 1. Installation:
 
