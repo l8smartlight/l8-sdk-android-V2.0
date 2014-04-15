@@ -156,10 +156,32 @@
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 <div style="padding:5px;">
 <img src="http://corcheaymedia.com/l8/wp-content/plugins/wp-l8-styles/images/logo.png" />
-<h2>L8 SDK for Android platform V2.0</h2>
+<h1>L8 SDK for Android platform V2.0</h1>
 <p>Thanks you for your interest about our L8 sdk for android platform. This documentation describes all functions and possibilities of this new SDK. We will improve and update it as soon as possible because we are in continuous evolution.</p
 <p>If you have done something with the previous version SDK V1.0, migrate your code to this new version is very easy to you.</p>
-<h3>1 Quick start</h3>
+<h2>How to install</h2>
+<h3>1.Import in eclipse.</h3>
+<img src="resources/init1.png" />
+<h3>2.Check as a library.</h3>
+<img src="resources/init2.png" />
+<h3>3.Create a new projet and select l8-sdk-android as a referenced library</h3>
+<img src="resources/init3.png" />
+<p>Maybe is also a good idea to get into the classpath.</p>
+<h3>4.Change manifest</h3>
+<code>- Insert in AndroidManifest.xml the activity.<br/>
+<br/>
+    &#60;activity <br/>
+        android:name="com.l8smartlight.sdk.android.bluetooth.DeviceListActivity" <br/>
+        android:label="@string/txt_select_device" <br/>
+        android:theme="@android:style&#47;Theme.Dialog"
+    &#47;&#62; </code>
+<p>and insert in strings.xml: string txt_select_device</p>
+<code>&#60;string name="txt_select_device"&#62;Select device&#60;&#47;string&#62;</code>
+<h2>Examples</h2>
+In the github project page you have an example of use: https://github.com/l8smartlight/l8-sdk-android-V2.0
+
+<p>There is a complete description of <a href="com/l8smartlight/sdk/android/AndroidL8Manager.html">AndroidL8Manager</a> and <a href="com/l8smartlight/sdk/android/AndroidL8ManagerListener.html">AndroidL8ManagerListener</a> in this javadoc.</p>
+
 </div>
 </body>
 </html>
