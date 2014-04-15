@@ -147,7 +147,7 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 
 ## 3. How it works
 
-Now when you want to set a led o put a new image in a L8 device, you can do all kind of operation through AndroidL8Manager.
+Now when you want to set a led or put a new image in a L8 device, you can do all kind of operations through AndroidL8Manager.
 
 **Example of use:**
 
@@ -165,10 +165,10 @@ Now when you want to set a led o put a new image in a L8 device, you can do all 
 	}
    
 ```
- A detail documentation about all functions can be consulted in javadoc section.
+ A detailed documentation about all functions can be consulted in javadoc section.
 
 **Note:**
-All operation through manager will affect to all connected devices, by default all are selected. You can operate with a specific L8 in this way:
+All operations through manager will affect to all connected devices, by default all are selected. You can operate with a specific L8 in this way:
 
 **Example of use:**
 
@@ -189,7 +189,7 @@ All operation through manager will affect to all connected devices, by default a
 
 Other way:
 
-Suppose you have two L8 connected
+Suppose you have two L8 connected.
 
 **Example of use:**
 
@@ -212,5 +212,13 @@ This this case only the second L8 will change its leds.
 
 
 ## 4. What is new in V2.0
+
+1- Now you can control multiple L8s.
+
+2- You have more control over connections.
+
+3- Simultor is an optional feature.
+
+4- More information is provided.
 
 
