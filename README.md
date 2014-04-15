@@ -49,7 +49,7 @@ public class MainActivity extends Activity implements AndroidL8ManagerListener{
 		setContentView(R.layout.activity_main);
 		manager = new AndroidL8Manager(this); 
 		manager.registerListener(this); //You must register listener if you wanto to recive events for manager.
-					        //N listeners can be registered.
+		                                //N listeners can be registered.
 					        
 		manager.init(this);             //Initializes AndroidL8Manager and starts connetions or scan.
 	}
