@@ -11,7 +11,7 @@ If you have done something with the previous version SDK V1.0, migrate your code
 Now a javadoc is available in /doc. In this documentation all functions and new features of V2.0 are shown to you.  
 
 **Note:**
-Thre is an easy way to create apps for your L8 without this SDk, you can use Exposed Api for more details:  [exposed APIA](https://github.com/l8devteam/Exposed-Android-API)
+Thre is an easy way to create apps for your L8 without this SDk, you can use Exposed Api for more details:  [Exposed-Android-API](https://github.com/l8devteam/Exposed-Android-API)
 
 ## 1. Installation:
 
