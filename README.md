@@ -224,4 +224,7 @@ This this case only the second L8 will change its leds.
 
 4- More information is provided.
 
+## 5. Examples
+
+There is a complete application in [Countdown](https://github.com/l8smartlight/Countdown-for-android) repository.
 
